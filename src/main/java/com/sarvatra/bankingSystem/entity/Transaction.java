@@ -14,19 +14,23 @@ public class Transaction {
     private int id;
 
     @Column(name = "from_account")
-    private String fromAccount;
+    private int fromAccount;
 
-    @Column(name = "to_account")    private String toAccount;
+    @Column(name = "to_account")    private int toAccount;
 
     @Column(name = "amount")
     private BigDecimal amount;
 
+    @Column(name = "transfer_type")
+    private String transferType;
+
     public Transaction(){}
 
-    public Transaction(String fromAccount, String toAccount, BigDecimal amount) {
+    public Transaction(int fromAccount, int toAccount, BigDecimal amount, String transferType) {
         this.fromAccount = fromAccount;
         this.toAccount = toAccount;
         this.amount = amount;
+        this.transferType = transferType;
     }
 
     public void setId(int id) {
@@ -37,19 +41,19 @@ public class Transaction {
         return id;
     }
 
-    public String getFromAccount() {
+    public int getFromAccount() {
         return fromAccount;
     }
 
-    public void setFromAccount(String fromAccount) {
+    public void setFromAccount(int fromAccount) {
         this.fromAccount = fromAccount;
     }
 
-    public String getToAccount() {
+    public int getToAccount() {
         return toAccount;
     }
 
-    public void setToAccount(String toAccount) {
+    public void setToAccount(int toAccount) {
         this.toAccount = toAccount;
     }
 
@@ -59,5 +63,13 @@ public class Transaction {
 
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
+    }
+
+    public String getTransferType() {
+        return transferType;
+    }
+
+    public void setTransferType(String transferType) {
+        this.transferType = transferType;
     }
 }
