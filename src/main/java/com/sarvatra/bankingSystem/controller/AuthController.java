@@ -38,7 +38,9 @@ public class AuthController {
 
         response.put("authenticated", true);
         response.put("message", "Authenticated");
-
+        response.put("acc_no", user.getAcc_no());
+        response.put("name", user.getName());
+        response.put("ifsc_no", user.getIfsc_no());
         return response;
     }
 }
